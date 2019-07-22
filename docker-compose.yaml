@@ -7,6 +7,7 @@ services:
     container_name: ${NGINX_CONTAINER}
     ports:
       - ${NGINX_PORT}:80
+      - ${NGINX_PORT_SSL}:443
     volumes:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
       - ./application:/app
