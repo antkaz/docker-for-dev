@@ -1,0 +1,2 @@
+conf.d/*
+docker-entrypoint-initdb.d/*
