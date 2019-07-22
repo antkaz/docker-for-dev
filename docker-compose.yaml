@@ -11,6 +11,8 @@ services:
       - ./docker/nginx/conf.d:/etc/nginx/conf.d
       - ./application:/app
       - ./runtime/nginx:/var/log/nginx
+    networks:
+      - development
     restart: always
 
   php:
@@ -24,4 +26,10 @@ services:
       PHP_IDE_CONFIG: 'serverName=${PHPSTORM_SERVER_NAME}'
     volumes:
       - ./application:/app
+    networks:
+      - development
     restart: always
+
+networks:
+  development:
+    name: ${NETWORK_NAME}
