@@ -10,7 +10,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y \
         git \
-        mysql-client \
         unzip \
         zlib1g-dev \
         libcurl3-dev && \
@@ -27,7 +26,7 @@ RUN apt-get update && \
 RUN curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
 
-# custom params for php
+# Custom params for php
 COPY conf.d/ /usr/local/etc/php/conf.d/
 
-WORKDIR /var/www
+WORKDIR /app
