@@ -17,3 +17,6 @@ Thumbs.db
 
 # dotenv
 /.env
+
+# project
+/application
